@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 import "font-awesome/css/font-awesome.css"
 
-axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.baseURL = 'https://django-nba.herokuapp.com'
 
 new Vue({
   el: '#app',
