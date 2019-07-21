@@ -1,8 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Router from './router'
+import BootstrapVue from 'bootstrap-vue'
+import axios from 'axios'
 
+Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
+import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
+import "font-awesome/css/font-awesome.css"
+
+axios.defaults.baseURL = 'http://localhost:8000'
+
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  router: Router,
+  components: {App},
+  render: h => h(App)
+})
