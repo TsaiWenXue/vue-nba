@@ -2,13 +2,13 @@
     <div id="article">
         <div class="card mb-4 mx-auto" style="max-width: 50%; ">
             <div class="row no-gutters">
-                <h2 class="card-title mx-auto"> <strong> {{news_article.title}} </strong></h2>
-                <p class="card-text mx-auto"><small class="text-muted"> {{news_article.date_time}} {{news_article.author}} </small></p>
+                <h2 class="card-title mx-auto"> <strong> {{n.title}} </strong></h2>
+                <p class="card-text mx-auto"><small class="text-muted"> {{n.date_time}} {{n.author}} </small></p>
                 <div class="card-body">
-                    <img :src="news_article.image_source" class="card-img">
-                    <p class="card-text"> {{news_article.content}} </p>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" :src="news_article.video_source" v-if="news_article.video_source !== null"></iframe>
+                    <img :src="n.image_source" class="card-img">
+                    <p class="card-text"> {{n.content}} </p>
+                    <div class="embed-responsive embed-responsive-16by9" v-if="n.video_source !== null">
+                        <iframe class="embed-responsive-item" :src="n.video_source" ></iframe>
                     </div>
                 </div>    
             </div>
@@ -22,6 +22,7 @@ export default {
     props: ['news_article'],
     data() {
     return {
+        n: this.news_article
     }
   }
 }
